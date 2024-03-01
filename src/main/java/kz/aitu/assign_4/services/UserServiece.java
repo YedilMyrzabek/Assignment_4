@@ -13,7 +13,7 @@ public class UserServiece {
         this.userRepository = userRepository;
     }
 
-    public UserModel registerUser(String login,String password,String email){
+    public UserModel registerUser(String login,String password,String email,String name,String surname){
         if(login == null && password == null){
             return null;
         }else {
@@ -25,6 +25,8 @@ public class UserServiece {
             userModel.setLogin(login);
             userModel.setPassword(password);
             userModel.setEmail(email);
+            userModel.setName(name);
+            userModel.setSurname(surname);
             return userRepository.save(userModel);
         }
     }

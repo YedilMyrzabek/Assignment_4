@@ -6,5 +6,14 @@
 </head>
 <body>
 <h1>Welcome to the personal page <span th:text="${userLogin}"></span></h1>
+<p th:text="${userName + ', ' + userSurname}">VALUE</p>
+<p th:text="${'Email: ' + userEmail}">VALUE</p>
+<p th:text="${'ID: '+userId}">VALUE</p>
+
+<a th:href="@{userId}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/userId(userId=${userId})}">
+    <input type="submit" value="Delete"/>
+</form>
 </body>
 </html>

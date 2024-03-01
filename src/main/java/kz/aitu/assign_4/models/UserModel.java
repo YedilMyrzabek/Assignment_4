@@ -18,13 +18,9 @@ public class UserModel {
     String login;
     String password;
     String email;
+    String name;
+    String surname;
 
-    public int getId(){
-        return id;
-    }
-    public void setId(int id){
-        this.id = id;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

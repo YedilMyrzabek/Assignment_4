@@ -34,7 +34,7 @@ public class UserController {
     @PostMapping("/register")
     public String register(@ModelAttribute UserModel usersModel){
         System.out.println("regiseter request: "+ usersModel);
-        UserModel registerUser = userServiece.registerUser(usersModel.getLogin(),usersModel.getPassword(),usersModel.getEmail());
+        UserModel registerUser = userServiece.registerUser(usersModel.getLogin(),usersModel.getPassword(),usersModel.getEmail(), usersModel.getName(), usersModel.getSurname());
         return registerUser == null ? "error_rage":"redirect:/login";
     }
 
@@ -44,6 +44,10 @@ public class UserController {
         UserModel authenticated = userServiece.authenticate(usersModel.getLogin(),usersModel.getPassword());
         if(authenticated != null){
             model.addAttribute("userLogin",authenticated.getLogin());
+            model.addAttribute("userName",authenticated.getName());
+            model.addAttribute("userSurname",authenticated.getSurname());
+            model.addAttribute("userEmail",authenticated.getEmail());
+            model.addAttribute("userId",authenticated.getId());
             return "personal_page";
         }else {
             return "error_page";
