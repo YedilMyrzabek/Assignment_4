@@ -1,24 +1,30 @@
 package kz.aitu.assign_4.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import lombok.*;
 import lombok.Getter;
-import lombok.Setter;
 
+import lombok.Setter;
 import java.util.Objects;
 
+@Data
 @Entity
-@Table(name = "users_table")
 @Getter@Setter
-
+@Table(name = "users_table")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    int id;
     String login;
     String password;
     String email;
 
+    public int getId(){
+        return id;
+    }
+    public void setId(int id){
+        this.id = id;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

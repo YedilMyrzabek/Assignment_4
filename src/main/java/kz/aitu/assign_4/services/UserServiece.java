@@ -2,8 +2,6 @@ package kz.aitu.assign_4.services;
 
 import kz.aitu.assign_4.models.UserModel;
 import kz.aitu.assign_4.repositories.UserRepository;
-import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -44,7 +44,7 @@ public class UserController {
         UserModel authenticated = userServiece.authenticate(usersModel.getLogin(),usersModel.getPassword());
         if(authenticated != null){
             model.addAttribute("userLogin",authenticated.getLogin());
-            return "rersonal_page";
+            return "personal_page";
         }else {
             return "error_page";
         }
